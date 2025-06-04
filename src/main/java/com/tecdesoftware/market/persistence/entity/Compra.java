@@ -3,6 +3,7 @@ package com.tecdesoftware.market.persistence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 
@@ -27,6 +28,16 @@ public class Compra {
     private Integer comentario;
 
     private Boolean estado;
+
+    //Relacion con cliente, muchas compras para un cliente
+    @ManyToOne
+    @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
+
+    private Cliente cliente;
+
+//una compra tiene muchos productos
+    @OneToMany(mappedBy = "compra")
+    private List<CompraProducto> compraProductos;
 
     public Integer getIdCompra() {
         return idCompra;
