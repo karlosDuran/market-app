@@ -7,11 +7,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
-//obtener una lista de productos filtrados por id de categoria y ordenados ascedentemente por nombre
+    //query metodos
+    //obtener una lista de productos filtrados por id de categoria y ordenanados por acedentenmente por nombre
     List<Producto> findByIdCategoriaOrderByNombreAsc(int idCategoria);
-    //dependiendo del nombre del metodo genera una query sql
 
-    //obtener los productos escasos
-    Optional<List<Producto>> findByCantidadStockLessThanAndEstado(int cantidadStock, boolean estado);
-
+    //obtener los porductos escasos
+    Optional <List<Producto>> findByCantidadStockLessThanAndEstado(int cantidad, boolean estado);
 }
