@@ -5,31 +5,25 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="clientes")
-
+@Table (name = "clientes" )
 public class Cliente {
+
     @Id
-    //@GeneratedValue porque el ID sera la CURP, será manual
-    private Integer id;
+
     private String nombre;
+
+    @Column (name = "apellidos")
     private String apellido;
+
     private Long celular;
+
     private String direccion;
 
-
-    @Column(name="correo_electronico")
+    @Column (name = "correo_electronico")
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
