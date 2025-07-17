@@ -25,7 +25,7 @@ public class Compra {
 
     private String comentario;
 
-    private Boolean estado;
+    private String estado;
 
     @ManyToOne
     @JoinColumn (name = "id_cliente", insertable = false, updatable = false)
@@ -35,11 +35,11 @@ public class Compra {
     private List<CompraProducto> compraProductos;
 
 
-    public Boolean getEstado() {
+    public String getEstado() {
         return estado;
     }
 
-    public void setEstado(Boolean estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
