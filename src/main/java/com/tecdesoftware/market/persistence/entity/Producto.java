@@ -26,6 +26,7 @@ public class Producto {
     @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
+    @Column(name = "estado")
     private Boolean estado;
 
     @ManyToOne
